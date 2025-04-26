@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ClimApp - Tu aplicación del clima</title>
+    <link rel="stylesheet" href="styles.css">
+    <!-- Agregar referencia al archivo de configuración -->
+    <script src="config.js" defer></script>
+    <script src="app.js" defer></script>
+</head>
+<body>
+    <div class="app">
+        <header class="header">
+            <div class="app__container header__container">
+                <div class="header__logo">
+                    <span class="header__logo-icon icon-logo"></span>
+                    ClimApp
+                </div>
+                <nav class="header__nav">
+                    <ul class="nav__list">
+                        <li class="nav__item">
+                            <a href="#" class="nav__link nav__link--active">Inicio</a>
+                        </li>
+                        <li class="nav__item">
+                            <a href="#" class="nav__link">Mapa</a>
+                        </li>
+                        <li class="nav__item">
+                            <a href="#" class="nav__link">Historial</a>
+                        </li>
+                        <li class="nav__item">
+                            <a href="#" class="nav__link">Alertas</a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+
+        <main class="main">
+            <div class="app__container">
+                <section class="dashboard">
+                    <div class="weather-card">
+                        <div class="weather-card__header">
+                            <div>
+                                <h2 class="weather-card__title">Madrid, España</h2>
+                                <p class="weather-card__subtitle">Sábado, 25 de Abril</p>
+                            </div>
+                            <div class="weather-card__update">
+                                <p>Última actualización: 14:30</p>
+                                <button class="weather-card__refresh">
+                                    <span class="weather-card__refresh-icon icon-refresh"></span>
+                                    Actualizar
+                                </button>
+                            </div>
+                        </div>
+                        <div class="weather-card__main">
+                            <div class="weather-card__temp">23°C</div>
+                            <div class="weather-card__icon icon-sunny"></div>
+                        </div>
+                        <div class="weather-card__details">
+                            <div class="weather-detail">
+                                <div class="weather-detail__icon icon-temp"></div>
+                                <div class="weather-detail__value">25°C / 18°C</div>
+                                <div class="weather-detail__label">Máx / Mín</div>
+                            </div>
+                            <div class="weather-detail">
+                                <div class="weather-detail__icon icon-humidity"></div>
+                                <div class="weather-detail__value">45%</div>
+                                <div class="weather-detail__label">Humedad</div>
+                            </div>
+                            <div class="weather-detail">
+                                <div class="weather-detail__icon icon-wind"></div>
+                                <div class="weather-detail__value">10 km/h</div>
+                                <div class="weather-detail__label">Viento</div>
+                            </div>
+                            <div class="weather-detail">
+                                <div class="weather-detail__icon icon-pressure"></div>
+                                <div class="weather-detail__value">1015 hPa</div>
+                                <div class="weather-detail__label">Presión</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="sidebar">
+                        <div class="location">
+                            <h3 class="location__title">Buscar ubicación</h3>
+                            <div class="location__form">
+                                <input type="text" class="location__input" placeholder="Ciudad, país...">
+                                <button class="location__button">
+                                    <span class="icon-search"></span>
+                                </button>
+                            </div>
+                            <ul class="location-list">
+                                <li class="location-list__item location-list__item--active">
+                                    <span class="location-list__icon icon-location"></span>
+                                    <div class="location-list__text">
+                                        <div class="location-list__city">Madrid</div>
+                                        <div class="location-list__country">España</div>
+                                    </div>
+                                </li>
+                                <li class="location-list__item">
+                                    <span class="location-list__icon icon-location"></span>
+                                    <div class="location-list__text">
+                                        <div class="location-list__city">Barcelona</div>
+                                        <div class="location-list__country">España</div>
+                                    </div>
+                                </li>
+                                <li class="location-list__item">
+                                    <span class="location-list__icon icon-location"></span>
+                                    <div class="location-list__text">
+                                        <div class="location-list__city">Valencia</div>
+                                        <div class="location-list__country">España</div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div class="historical">
+                            <h3 class="historical__title">Datos históricos</h3>
+                            <div class="historical__tabs">
+                                <div class="historical__tab historical__tab--active">Temperatura</div>
+                                <div class="historical__tab">Precipitaciones</div>
+                                <div class="historical__tab">Viento</div>
+                            </div>
+                            <div class="historical__content">
+                                <div class="historical__chart">
+                                    <!-- Aquí iría el gráfico -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="forecast">
+                    <h2 class="forecast__title">Pronóstico de 5 días</h2>
+                    <div class="forecast__container">
+                        <div class="forecast-card">
+                            <div class="forecast-card__day">Domingo</div>
+                            <div class="forecast-card__icon icon-sunny"></div>
+                            <div class="forecast-card__temp">
+                                <span class="forecast-card__temp-max">24°C</span>
+                                <span class="forecast-card__temp-min">17°C</span>
+                            </div>
+                        </div>
+                        <div class="forecast-card">
+                            <div class="forecast-card__day">Lunes</div>
+                            <div class="forecast-card__icon icon-cloudy"></div>
+                            <div class="forecast-card__temp">
+                                <span class="forecast-card__temp-max">22°C</span>
+                                <span class="forecast-card__temp-min">16°C</span>
+                            </div>
+                        </div>
+                        <div class="forecast-card">
+                            <div class="forecast-card__day">Martes</div>
+                            <div class="forecast-card__icon icon-rainy"></div>
+                            <div class="forecast-card__temp">
+                                <span class="forecast-card__temp-max">19°C</span>
+                                <span class="forecast-card__temp-min">14°C</span>
+                            </div>
+                        </div>
+                        <div class="forecast-card">
+                            <div class="forecast-card__day">Miércoles</div>
+                            <div class="forecast-card__icon icon-rainy"></div>
+                            <div class="forecast-card__temp">
+                                <span class="forecast-card__temp-max">18°C</span>
+                                <span class="forecast-card__temp-min">13°C</span>
+                            </div>
+                        </div>
+                        <div class="forecast-card">
+                            <div class="forecast-card__day">Jueves</div>
+                            <div class="forecast-card__icon icon-cloudy"></div>
+                            <div class="forecast-card__temp">
+                                <span class="forecast-card__temp-max">20°C</span>
+                                <span class="forecast-card__temp-min">15°C</span>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="map-section">
+                    <h2 class="map-section__title">Mapa del clima</h2>
+                    <div class="map-controls">
+                        <div class="map-controls__group">
+                            <label class="map-controls__label">Capa:</label>
+                            <select class="map-controls__select">
+                                <option>Temperatura</option>
+                                <option>Precipitaciones</option>
+                                <option>Nubes</option>
+                                <option>Viento</option>
+                            </select>
+                        </div>
+                        <div class="map-controls__group">
+                            <label class="map-controls__label">Zoom:</label>
+                            <select class="map-controls__select">
+                                <option>Ciudad</option>
+                                <option>Región</option>
+                                <option>País</option>
+                                <option>Continente</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="map-container">
+                        <div id="weatherMap">
+                            <!-- Aquí se cargará el mapa -->
+                        </div>
+                    </div>
+                    <div class="map-legend">
+                        <h4 class="map-legend__title">Leyenda</h4>
+                        <div class="map-legend__items">
+                            <div class="map-legend__item">
+                                <div class="map-legend__color" style="background-color: #FF5733;"></div>
+                                <span class="map-legend__label">30°C+</span>
+                            </div>
+                            <div class="map-legend__item">
+                                <div class="map-legend__color" style="background-color: #FFC300;"></div>
+                                <span class="map-legend__label">25-30°C</span>
+                            </div>
+                            <div class="map-legend__item">
+                                <div class="map-legend__color" style="background-color: #DAF7A6;"></div>
+                                <span class="map-legend__label">20-25°C</span>
+                            </div>
+                            <div class="map-legend__item">
+                                <div class="map-legend__color" style="background-color: #C4E0F5;"></div>
+                                <span class="map-legend__label">15-20°C</span>
+                            </div>
+                            <div class="map-legend__item">
+                                <div class="map-legend__color" style="background-color: #5DADE2;"></div>
+                                <span class="map-legend__label">10-15°C</span>
+                            </div>
+                            <div class="map-legend__item">
+                                <div class="map-legend__color" style="background-color: #3498DB;"></div>
+                                <span class="map-legend__label">5-10°C</span>
+                            </div>
+                            <div class="map-legend__item">
+                                <div class="map-legend__color" style="background-color: #2E86C1;"></div>
+                                <span class="map-legend__label">0-5°C</span>
+                            </div>
+                            <div class="map-legend__item">
+                                <div class="map-legend__color" style="background-color: #1B4F72;"></div>
+                                <span class="map-legend__label">< 0°C</span>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="alerts">
+                    <h2 class="alerts__title">Alertas meteorológicas</h2>
+                    <div class="alert-card alert-card--warning">
+                        <div class="alert-card__icon icon-warning"></div>
+                        <div class="alert-card__content">
+                            <h3 class="alert-card__title">Alerta por lluvias intensas</h3>
+                            <p class="alert-card__message">Se esperan precipitaciones de hasta 40mm en las próximas 24 horas. Posibilidad de inundaciones locales.</p>
+                            <div class="alert-card__footer">
+                                <span class="alert-card__time">Válido: 25 Abr, 18:00 - 26 Abr, 18:00</span>
+                                <span>AEMET</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="alert-card alert-card--info">
+                        <div class="alert-card__icon icon-info"></div>
+                        <div class="alert-card__content">
+                            <h3 class="alert-card__title">Índice UV alto</h3>
+                            <p class="alert-card__message">El índice UV alcanzará niveles altos (7-8) durante las horas centrales del día. Se recomienda protección solar.</p>
+                            <div class="alert-card__footer">
+                                <span class="alert-card__time">Válido: 25 Abr, 12:00 - 16:00</span>
+                                <span>AEMET</span>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </main>
+
+        <footer class="footer">
+            <div class="app__container footer__container">
+                <div class="footer__section">
+                    <h3 class="footer__title">ClimApp</h3>
+                    <p>Tu aplicación del clima confiable y precisa. Obtén pronósticos detallados, alertas meteorológicas y datos históricos para cualquier ubicación.</p>
+                </div>
+                <div class="footer__section">
+                    <h3 class="footer__title">Enlaces rápidos</h3>
+                    <ul class="footer__list">
+                        <li class="footer__item"><a href="#" class="footer__link">Inicio</a></li>
+                        <li class="footer__item"><a href="#" class="footer__link">Mapa</a></li>
+                        <li class="footer__item"><a href="#" class="footer__link">Historial</a></li>
+                        <li class="footer__item"><a href="#" class="footer__link">Alertas</a></li>
+                    </ul>
+                </div>
+                <div class="footer__section">
+                    <h3 class="footer__title">Contacto</h3>
+                    <ul class="footer__list">
+                        <li class="footer__item">Email: info@climapp.com</li>
+                        <li class="footer__item">Teléfono: +34 123 456 789</li>
+                        <li class="footer__item">Dirección: Calle Ejemplo 123, Madrid</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer__copyright">
+                &copy; 2025 ClimApp. Todos los derechos reservados. Desarrollado con ❤️
+            </div>
+        </footer>
+    </div>
+</body>
+</html>
